@@ -17,8 +17,7 @@ namespace KryptographBibliothek
 
 
 
-            Console.WriteLine
-                    (FiggleFonts.Slant.Render("Team Testo"));
+            Console.WriteLine(FiggleFonts.Slant.Render("Team Testo"));
 
             Console.Title = "Team Testo";
 
