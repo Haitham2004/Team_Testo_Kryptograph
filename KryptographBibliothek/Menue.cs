@@ -1,19 +1,25 @@
 ﻿using System;
-
+using Figgle;
 namespace KryptographBibliothek
 {
     public class Menue
     {
         public static void Meneu()
         {
-            string HauptAusw;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Clear();
             bool Exit = false;
-            bool Hmenue;
+            Console.WriteLine(FiggleFonts.Slant.Render("Cracked MH"), "\n");
+            Console.WriteLine("Drücken sie eine beliebige Taste um fortzufahren");
+            bool flag = false;
             do
             {
                 (int, int) cPosBM = Console.GetCursorPosition();
                 Console.WriteLine();
-
+                Console.ReadKey();
+                Console.Clear();
+                Console.WriteLine
+                    (FiggleFonts.Slant.Render("Kryptograph"));
                 Console.Title = "BFTMultiTool";
 
                 Console.WriteLine("------------------------------------------------------------------------------------\n" +
@@ -21,64 +27,53 @@ namespace KryptographBibliothek
                                   "------------------------------------------------------------------------------------\n\n");
                 Console.WriteLine("Eingabe: exit\t\t->\tbeendet das Program");
                 Console.WriteLine("\n\n Hier Können Sie Verschlüssene Texte entschlüssen");
-                Console.WriteLine("Eingabe: hauptmenü\t->\tzurück zum Hauptmenü");
-
-                Hmenue = false;
-
-                 
-                Console.WriteLine("Wählen Sie eine der folgenden Themenbereiche:\n");
-                Console.WriteLine("\t1 - Auslesen Chiffre\n");
-                Console.WriteLine("\t2 - Auslesen Tabelle\n ");
-                Console.WriteLine("\t3 - Zeichen Zaehlen\n");
-                Console.WriteLine("\t4 - Zeichen Entfernen\n");
-                Console.WriteLine("\t5 - Zeichen Ersetzen \n");
-                Console.WriteLine("\t6 - Ergebnis Ausgabe\n");
+        
+                Console.WriteLine("Bitte geben Sie den Pfad der Chiffre an.:\n");
                 Console.Write("Eingabe:");
-                HauptAusw = Console.ReadLine();
+                
 
-                switch (HauptAusw)
+                string dateipfad = Console.ReadLine();
+                switch (dateipfad)
                 {
-
-                    case "1":
-                        Console.Clear();
-                        AuslesenChiffre();
-
-                        break;
-
-                    case "2":
-                        Console.Clear();
-                        Feauture10.Feature10Funcion1();
-
-                        break;
-
-                    case "3":
-                        Console.Clear();
-                        Feature11.Feature11Funcion1();
-
-                        break;
-
-                    case "4":
-                        Console.Clear();
-                        Feature20.Feature20Funcion1();
-
-                        break;
-
-                    case "5":
-                        Console.Clear();
-                        Feature21.Feature21Funcion1();
-
-                        break;
-
-                    case "hauptmenü":
-                        Console.Clear();
-                        Hmenue = true;
-                        break;
                     case "exit":
                         Exit = true;
                         break;
+                    default:
+                        flag = Pfadprüfer(dateipfad);
+                        if (flag)
+                        {
+
+                        }
+
+                        break;
+
+                        KonsolenExtrasBibliothek.ClearCurrent.ClearCurrentConsoleLine(cPosBM.Item1, cPosBM.Item2);
+
+                }
+
+            } while (!flag);
+            if (Exit)
+                Environment.Exit(0);
+            }
+        public static bool Pfadprüfer(string pfad)
+        {
+             pfad = "C:\\Files\\file.txt";
+            bool result = File.Exists(pfad);
+            if (result == true)
+            {
+                Console.WriteLine("File Found");
+            }
+            else
+            {
+                Console.WriteLine("File Not Found");
+            }
+        }
+           
 
 
-                } while (!Exit);
+
+
+
         }
     }
 }
