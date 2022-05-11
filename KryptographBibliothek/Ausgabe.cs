@@ -2,8 +2,11 @@
 
 namespace KryptographBibliothek
 {
-    public class Ausgabe
+    public class ZeichenAusgabe
     {
+        public static void ausgabe()
+        {
 
+        }
     }
 }
