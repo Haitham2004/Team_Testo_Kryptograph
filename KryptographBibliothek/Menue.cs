@@ -1,5 +1,6 @@
 ﻿using System;
 using Figgle;
+using System.IO;
 namespace KryptographBibliothek
 {
     public class Menue
@@ -9,8 +10,8 @@ namespace KryptographBibliothek
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Clear();
             bool Exit = false;
-            Console.WriteLine(FiggleFonts.Slant.Render("Cracked MH"), "\n");
-            Console.WriteLine("Drücken sie eine beliebige Taste um fortzufahren");
+            Console.WriteLine(FiggleFonts.Slant.Render("Team Testo"), "\n");
+            Console.WriteLine("Enter um zu benutzen");
             bool flag = false;
             do
             {
@@ -20,26 +21,26 @@ namespace KryptographBibliothek
                 Console.Clear();
                 Console.WriteLine
                     (FiggleFonts.Slant.Render("Kryptograph"));
-                Console.Title = "BFTMultiTool";
+                Console.Title = "kryptographie entschlüssen";
 
                 Console.WriteLine("------------------------------------------------------------------------------------\n" +
-                                  "                              >>> Informatik <<<\n" +
+                                  "                              >>> Willkommen <<<\n" +
                                   "------------------------------------------------------------------------------------\n\n");
                 Console.WriteLine("Eingabe: exit\t\t->\tbeendet das Program");
                 Console.WriteLine("\n\n Hier Können Sie Verschlüssene Texte entschlüssen");
-        
+
                 Console.WriteLine("Bitte geben Sie den Pfad der Chiffre an.:\n");
                 Console.Write("Eingabe:");
-                
+
 
                 string dateipfad = Console.ReadLine();
                 switch (dateipfad)
                 {
                     case "exit":
-                        Exit = true;
+                        Environment.Exit(0);
                         break;
                     default:
-                        flag = Pfadprüfer(dateipfad);
+                        flag = Pfadpruefer(dateipfad);
                         if (flag)
                         {
 
@@ -52,28 +53,28 @@ namespace KryptographBibliothek
                 }
 
             } while (!flag);
-            if (Exit)
-                Environment.Exit(0);
-            }
-        public static bool Pfadprüfer(string pfad)
+        }
+           
+        public static bool Pfadpruefer(string pfad)
         {
-             pfad = "C:\\Files\\file.txt";
+             
             bool result = File.Exists(pfad);
             if (result == true)
             {
-                Console.WriteLine("File Found");
+                Console.WriteLine("File gefunden");
             }
             else
             {
-                Console.WriteLine("File Not Found");
+                Console.WriteLine("File nicht gefunden");
             }
+            return result;
         }
            
-
+        
 
 
 
 
         }
     }
-}
+
