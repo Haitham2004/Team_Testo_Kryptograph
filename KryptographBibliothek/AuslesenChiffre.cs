@@ -1,6 +1,6 @@
 ﻿using System;
-using Figgle;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +10,19 @@ namespace KryptographBibliothek
 {
     public class AuslesenChiffre
     {
-        public static void Auslesenchiffre()
+        public static string Auslesenchiffre(string d)
         {
 
-            string pfad = @"C:\Users\tobias.c11\source\repos\Team_Testo_Kryptograph\Chiffre.txt";
 
+            Console.WriteLine(d);
 
-            string text = System.IO.File.ReadAllText(pfad);
-            System.Console.WriteLine("Ausgabe von Chiffre.txt = \n {0}", text);
+            StreamReader pfad = new StreamReader(d);
+            string text = System.IO.File.ReadAllText(d);
+           
+            pfad.Close();
+            return text;
 
-
-          
-
+            
 
         }
 
