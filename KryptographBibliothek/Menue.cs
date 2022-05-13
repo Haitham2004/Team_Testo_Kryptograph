@@ -69,8 +69,12 @@ namespace KryptographBibliothek
             }
             return result;
         }
-           
-        
+        public static string substitutionverfahren()
+        {
+            return substitutionverfahren;
+        }
+
+       
 
 
 
