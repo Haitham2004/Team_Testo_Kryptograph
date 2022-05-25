@@ -18,30 +18,31 @@ namespace KryptographBibliothek
 
             for (int i = 0; i < chiffre.Length;i ++)
             {
-                int count = chiffre.Count(f => f == chiffre[i]);
-                Console.WriteLine($"{chiffre[i]}\t{count}");
+                double count = chiffre.Count(f => f == chiffre[i]);
+               
 
-               if (tabelle_wahrscheinlichkeiten.ContainsKey(Char.ToString(chiffre[i])));
+               if (!tabelle_wahrscheinlichkeiten.ContainsKey(Char.ToString(chiffre[i])))
 
                 {
-                   tabelle_wahrscheinlichkeiten.Add  
+                    tabelle_wahrscheinlichkeiten.Add(chiffre[i].ToString(), count / chiffre.Length);  
 
                 }
                 
 
+            }
 
-
-                Console.WriteLine(count);
+            foreach(KeyValuePair<string,double> item in tabelle_wahrscheinlichkeiten)
+            {
+               
+               Console.WriteLine("buchstaben: {0}, warscheinlichkeit: {1}", item.Key, item.Value);
 
             }
-          
-        
-            Console.WriteLine(chiffre.Length);
+            
 
 
-            // kK 7/1144
-            // l 152/1144
-            // k 7/1144
+            
+
+            
 
         }
     }
