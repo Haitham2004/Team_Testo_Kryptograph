@@ -13,6 +13,7 @@ namespace KryptographBibliothek
             Console.WriteLine(FiggleFonts.Slant.Render("Team Testo"), "\n");
             Console.WriteLine("Enter um zu benutzen");
             bool flag = false;
+            string Chiffre = "a";
             do
             {
                 (int, int) cPosBM = Console.GetCursorPosition();
@@ -31,6 +32,8 @@ namespace KryptographBibliothek
 
                 Console.WriteLine("Bitte geben Sie den Pfad der Chiffre an.:\n");
                 Console.Write("Eingabe:");
+               
+                
 
 
                 string dateipfad = Console.ReadLine();
@@ -43,7 +46,9 @@ namespace KryptographBibliothek
                         flag = Pfadpruefer(dateipfad);
                         if (flag)
                         {
-
+                            //class1.Zeichenersetzen(dictionary<string,double>);
+                                //Console.WriteLine(Chiffre);
+                            
                         }
 
                         break;
@@ -69,16 +74,13 @@ namespace KryptographBibliothek
             }
             return result;
         }
-        public static string substitutionverfahren()
+        public static string substitutionverfahren(string a)
         {
-            return substitutionverfahren;
+            
+            return a;
         }
 
        
-
-
-
-
         }
     }
 
