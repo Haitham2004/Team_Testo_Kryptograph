@@ -98,33 +98,7 @@ namespace KryptographBibliothek
             // Klartext auf Englisch = Ber by
 
             // Sortiert Value  
-
-            Dictionary<string, string> dict = new Dictionary<string, string>
-        {
-            { "key1", "value1" },
-            { "key2", "value2" }
-        };
-
-            dict.Add("key3", "value3");
-
-            foreach (var (key, value) in dict)
-            {
-                Console.WriteLine(key + " : " + value);
-            }
         }
+
     }
 }
-
-    /*
-        Output:
-
-        key1 : value1
-        key2 : value2
-        key3 : value3
-    */
-
-
-
-          
-     
-
