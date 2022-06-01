@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace StartKryptograph
 {
@@ -6,7 +7,13 @@ namespace StartKryptograph
     {
         static void Main(string[] args)
         {
-            KryptographBibliothek.ZeichenZaehlen.Zaehlen();
+
+            Dictionary<string, double> tabelle_zeichen = new Dictionary<string, double>();
+            string chiffre = "Klyulbl";
+
+            tabelle_zeichen=KryptographBibliothek.ZeichenZaehlen.Zaehlen(chiffre);
+
+            Console.ReadKey();
         }
     }
 }

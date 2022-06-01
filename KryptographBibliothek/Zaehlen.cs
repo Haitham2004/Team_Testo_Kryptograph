@@ -7,12 +7,12 @@ namespace KryptographBibliothek
     public class ZeichenZaehlen
     {
         //arad / Florian
-        public static void Zaehlen()
+        public static Dictionary<string, double> Zaehlen(string chiffre)
         {
 
             Dictionary<string, double> tabelle_wahrscheinlichkeiten =new();
 
-            string chiffre = "Klyulbl";
+
 
              chiffre=chiffre.ToUpper();
 
@@ -31,16 +31,16 @@ namespace KryptographBibliothek
 
             }
 
-            foreach(KeyValuePair<string,double> item in tabelle_wahrscheinlichkeiten)
-            {
+            //foreach(KeyValuePair<string,double> item in tabelle_wahrscheinlichkeiten)
+            //{
                
-               Console.WriteLine("buchstaben: {0}, warscheinlichkeit: {1}", item.Key, item.Value);
+            //   Console.WriteLine("buchstaben: {0}, warscheinlichkeit: {1}", item.Key, item.Value);
 
-            }
-            
+            //}
 
 
-            
+
+            return tabelle_wahrscheinlichkeiten;
 
             
 
