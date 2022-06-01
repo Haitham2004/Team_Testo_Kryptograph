@@ -46,16 +46,15 @@ namespace KryptographBibliothek
                         flag = Pfadpruefer(dateipfad);
                         if (flag)
                         {
-                            //class1.Zeichenersetzen(dictionary<string,double>);
-                                //Console.WriteLine(Chiffre);
-                            
+                            substitutionverfahren();
+
                         }
 
                         break;
-
                         KonsolenExtrasBibliothek.ClearCurrent.ClearCurrentConsoleLine(cPosBM.Item1, cPosBM.Item2);
-
                 }
+                        
+
 
             } while (!flag);
         }
@@ -74,10 +73,10 @@ namespace KryptographBibliothek
             }
             return result;
         }
-        public static string substitutionverfahren(string a)
+        public static void substitutionverfahren()
         {
             
-            return a;
+          
         }
 
        
