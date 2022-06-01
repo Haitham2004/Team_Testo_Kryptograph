@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AddFiles", "AddFiles", "{D568B256-4706-4BF7-99BE-78948D1C45CE}"
 	ProjectSection(SolutionItems) = preProject
 		\\BK175055\haitham.k2\Desktop\Chiffre.txt.txt = \\BK175055\haitham.k2\Desktop\Chiffre.txt.txt
-		\\BK175055\haitham.k2\Desktop\DeutschTabelle.txt = \\BK175055\haitham.k2\Desktop\DeutschTabelle.txt
+		Deutsch_Wahrscheinlichkeiten.txt = Deutsch_Wahrscheinlichkeiten.txt
 		\\BK175055\haitham.k2\Desktop\EnglischTabelle.txt = \\BK175055\haitham.k2\Desktop\EnglischTabelle.txt
 	EndProjectSection
 EndProject

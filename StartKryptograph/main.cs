@@ -6,7 +6,8 @@ namespace StartKryptograph
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string pfad = @"C:\Users\mansour.a3\Source\Repos\Team_Testo_Kryptograph\Deutsch_Wahrscheinlichkeiten.txt";
+            KryptographBibliothek.AuslesenTabelle.Auslesen(pfad);
         }
     }
 }
