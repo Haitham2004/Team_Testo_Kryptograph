@@ -1,5 +1,6 @@
 ﻿using System;
 using Figgle;
+using System.Collections.Generic;
 using System.IO;
 namespace KryptographBibliothek
 {
@@ -50,8 +51,9 @@ namespace KryptographBibliothek
 
                         }
 
-                        break;
+                        
                         KonsolenExtrasBibliothek.ClearCurrent.ClearCurrentConsoleLine(cPosBM.Item1, cPosBM.Item2);
+                        break;
                 }
                         
 
@@ -75,8 +77,13 @@ namespace KryptographBibliothek
         }
         public static void substitutionverfahren()
         {
-            
-          
+            Dictionary<string, double> tabelle_zeichen = new Dictionary<string, double>();
+            string chiffre = "Klyulbl";
+
+            tabelle_zeichen = KryptographBibliothek.ZeichenZaehlen.Zaehlen(chiffre);
+
+            Console.ReadKey();
+
         }
 
        
