@@ -12,13 +12,14 @@ namespace KryptographBibliothek
         public static Dictionary<string, double> Auslesen(string pfad)
         {
 
-          
+           
+
 
             Console.ForegroundColor = ConsoleColor.Cyan;
 
 
             string[] lines = System.IO.File.ReadAllLines(pfad);
-            var Dictionary = new Dictionary<string, double>();
+            var Dictionary_Tabelle = new Dictionary<string, double>();
 
 
 
@@ -27,13 +28,14 @@ namespace KryptographBibliothek
 
                 string[] row_items = rows.Split('\t',' ','%');
 
-                Dictionary.Add((row_items[0]), Convert.ToDouble(row_items[1]));
+                Dictionary_Tabelle.Add((row_items[0]), Convert.ToDouble(row_items[1]));
 
                 //Console.WriteLine(row_items[0] + "und" + row_items[1]);
 
 
-                return Dictionary;
+               
             }
+            return Dictionary_Tabelle;
         }
     }
 }
