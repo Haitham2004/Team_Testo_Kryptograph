@@ -78,7 +78,7 @@ namespace KryptographBibliothek
         }
         public static void substitutionverfahren(string chiffre)
         {
-
+            
             string pfad_tabelle = @"C:\Users\Haitham.k2\Source\Repos\Team_Testo_Kryptograph\Deutsch_Wahrscheinlichkeiten.txt";
 
             Dictionary<string, double> tabelle_deutsch = new Dictionary<string, double>();
