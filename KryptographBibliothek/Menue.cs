@@ -47,7 +47,8 @@ namespace KryptographBibliothek
                         flag = Pfadpruefer(dateipfad);
                         if (flag)
                         {
-                            substitutionverfahren();
+                            string chiffre = Aulesen.ZeichenAuslesen(dateipfad);
+                            substitutionverfahren(chiffre);
 
                         }
 
@@ -75,8 +76,15 @@ namespace KryptographBibliothek
             }
             return result;
         }
-        public static void substitutionverfahren()
+        public static void substitutionverfahren(string chiffre)
         {
+
+            string pfad_tabelle = @"C:\Users\Haitham.k2\Source\Repos\Team_Testo_Kryptograph\Deutsch_Wahrscheinlichkeiten.txt";
+
+            Dictionary<string, double> tabelle_deutsch = new Dictionary<string, double>();
+
+            tabelle_deutsch = TabelleAuslesen.Auslesen(pfad_tabelle);
+
             Dictionary<string, double> tabelle_zeichen = new Dictionary<string, double>();
             string chiffre = "Klyulbl";
 
