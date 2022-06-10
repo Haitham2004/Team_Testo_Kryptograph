@@ -1,44 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Text;
 
-namespace KryptographBibliothek
-{
+namespace KryptographBibliothek{
     public class ZeichenErsetzen
     {
-        public static void Ersetzen(string chiffre )
 
+        public static string Ersetze_zeichen(string chiffre, Dictionary<string, double> Tabelle_Chiffre, Dictionary<string, double> tabelle_zeichen)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("------------------------------------------------------------------------------------\n" +
-                             "                              >>> Schlüssel <<<\n" +
-                             "------------------------------------------------------------------------------------\n\n");
+                              "                              >>> Schlüssel <<<\n" +
+                              "------------------------------------------------------------------------------------\n\n");
+          
+            chiffre = chiffre.ToUpper();
 
 
-            ///beise Dictionarys sortieren
+            tabelle_zeichen = tabelle_zeichen.OrderByDescending(u=>u.Value).ToDictionary(z=>z.Key,y=>y.Value);
+
+            Tabelle_Chiffre = Tabelle_Chiffre.OrderByDescending(u=>u.Value).ToDictionary(z=>z.Key,y=>y.Value);
+
+           StringBuilder ch=new StringBuilder(chiffre);
 
 
-            Dictionary<string, double> tabelle_zeichen_deutsch = new Dictionary<string, double>();      //Deutsch
+            int index = 0;
 
-            Dictionary<string, double> tabelle_zeichen_englisch = new Dictionary<string, double>();     //Englsich
-
-            Dictionary<string, double> tabelle_zeichen_chiffre = new Dictionary<string, double>();      //Chiffre
-
-            var sortedDict_chiffre = from entry in tabelle_zeichen_chiffre orderby entry.Value ascending select entry;
-            var sortedDict_deutsch = from entry in tabelle_zeichen_deutsch orderby entry.Value ascending select entry;
-
-            //tabelle_zeichen_chiffre = tabelle_zeichen_chiffre.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
-
-
-
-
-            for (int i =0; i< tabelle_zeichen_chiffre.Count; i++)
+            for (int i = 0; i < chiffre.Length; i++)
             {
+                for (int j = 0; j < Tabelle_Chiffre.Count;j++)
+                {
+                    if (Tabelle_Chiffre.Keys.ElementAt(j) == chiffre[i].ToString())
+                    {
+                        index = j;
 
-                chiffre.Replace(sortedDict_chiffre.ElementAt(sortedDict_chiffre.Count() - i - 1).Key, sortedDict_deutsch.ElementAt(sortedDict_deutsch.Count() - i - 1).Key);
+                        ch[i] = tabelle_zeichen.Keys.ElementAt(index).ToCharArray()[0];
 
-                Console.WriteLine(chiffre);
-            }                                                                                // Sortiert Value  
+                    }
+
+
+
+                }
+            }
+
+            return ch.ToString();
         }
     }
 }

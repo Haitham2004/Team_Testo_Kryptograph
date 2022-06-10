@@ -89,7 +89,9 @@ namespace StartKryptograph
 
             string chiffre = "Kly ulbl";
 
-            KryptographBibliothek.ZeichenErsetzen.Ersetzen(chiffre);
+            string klartext=KryptographBibliothek.ZeichenErsetzen.Ersetze_zeichen(chiffre,tabelle_zeichen_chiffre,tabelle_zeichen_deutsch);
+
+            Console.WriteLine(klartext);
         }
     }
 }
