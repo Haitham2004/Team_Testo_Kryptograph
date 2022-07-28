@@ -1,4 +1,4 @@
-# BFT Phantoms (Kryptograph)
+# (Kryptograph)
 
 ## Teammitglieder
 
