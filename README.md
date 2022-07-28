@@ -14,5 +14,5 @@
 |   		| |Entwickler|@Florian116|methode2|
 
 ## Über das Projekt
-...
-
+Mit diesem Programm können Sie verschiedene Chiffren entschlüsseln, um einen klaren Text zu haben, in dem Sie die Chiffre eingeben dann wir die ausgelesen, die Zeichen werden gezählt dann entfernt Zeichen die unnötig sind dann werden ersetzt und am ende kommt einen klaren Text raus
+Eigenes Feature: Meine Feature erzeugt die Menüoberfläche für das gesamte Programm und dient als Schnittstelle für alle Informationen.
